@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta property="og:title" content="2026 大温市选决策指南"><meta property="og:description" content="素里与列治文 14 位市长候选人对照，含教委名单、投票资格与来源，不推荐投谁。"><meta property="og:type" content="website">
+<title>2026 大温市选决策指南</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: dark ink hero, then a filterable grid of candidate cards; details fold away.
+   Palette: cool grey-green ground, ink text, teal accent, amber only for "worth a look". */
+:root {
+  --bg:#f4f7f6; --surface:#ffffff; --ink:#0f1f1e; --muted:#51635f; --line:#d5dfdc;
+  --accent:#0b7a68; --accent-ink:#ffffff; --accent-soft:#dff0ec;
+  --warn:#9a4a07; --warn-soft:#fdf0dd; --warn-line:#e08a2c;
+  --hero-bg:#d8ece7; --hero-ink:#0d2a26; --hero-muted:#3f6159; --hero-accent:#0b7a68; --hero-accent-ink:#ffffff;
+  --p0:#7a8a87; --p1:#2563c9; --p2:#c2410c; --p3:#7c3aed; --p4:#b91c1c; --p5:#0f766e; --p6:#a16207;
+  --font: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+:root[data-theme="dark"] {
+  --bg:#0c1413; --surface:#142120; --ink:#e6efed; --muted:#93a8a4; --line:#263936;
+  --accent:#4cc2ab; --accent-ink:#06211d; --accent-soft:#143530;
+  --warn:#f0a45c; --warn-soft:#2a2013; --warn-line:#d98a35;
+  --hero-bg:#0a1f1c; --hero-ink:#eaf5f2; --hero-muted:#8fb5ae; --hero-accent:#3fc9ae; --hero-accent-ink:#06211d;
+  --p0:#8fa19d; --p1:#6ea4ff; --p2:#ff9a62; --p3:#b69bff; --p4:#ff8383; --p5:#4fd1c0; --p6:#e8bb55; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 15px; line-height: 1.7; margin: 0; }
+.shell { max-width: 1040px; margin: 0 auto; padding-inline: 16px; padding-block: 16px 40px; }
+h1, h2, h3, h4, p, ul, ol, dl, dd { margin: 0; }
+sup.cite { font-size: 10.5px; font-weight: 700; color: var(--accent); margin-left: 1px; }
+a { color: var(--accent); }
+
+/* hero */
+.hero { background: var(--hero-bg); color: var(--hero-ink); border-radius: 14px; padding: 28px clamp(18px, 4vw, 36px) 20px; }
+.eyebrow { font-size: 13px; letter-spacing: .14em; color: var(--hero-accent); font-weight: 700; }
+.hero h1 { font-size: clamp(30px, 7vw, 52px); line-height: 1.15; font-weight: 900; margin-top: 8px; text-wrap: balance; }
+.hero-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 20px; }
+.datebox { background: var(--hero-accent); color: var(--hero-accent-ink); border-radius: 10px; padding: 8px 16px; line-height: 1.25; }
+.datebox b { display: block; font-size: 22px; font-weight: 900; }
+.datebox span { font-size: 12.5px; font-weight: 500; }
+.count { font-size: 17px; font-weight: 700; }
+.by { margin-top: 18px; font-size: 12.5px; color: var(--hero-muted); }
+
+/* how */
+.how { margin-top: 16px; }
+.how ol { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; counter-reset: st; }
+.how li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; counter-increment: st; }
+.how li::before { content: counter(st); display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.how li b { display: block; font-size: 15px; }
+.how li span { font-size: 13px; color: var(--muted); }
+.three { margin-top: 12px; font-size: 14px; color: var(--muted); }
+.three b { color: var(--ink); }
+.three strong { color: var(--ink); }
+
+/* nav */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; display: flex; gap: 6px; overflow-x: auto; padding: 10px 0; background: var(--bg); margin-top: 6px; }
+.nav a { flex: 0 0 auto; padding: 5px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); text-decoration: none; font-size: 13.5px; }
+.nav a:hover, .nav a:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
+
+section { margin-top: 26px; scroll-margin-top: 56px; }
+h2 { font-size: 22px; font-weight: 900; margin-bottom: 12px; }
+h3.sub { font-size: 16px; margin: 18px 0 8px; }
+h3.sub small { font-weight: 400; color: var(--muted); font-size: 13px; margin-left: 6px; }
+.small { font-size: 13px; color: var(--muted); }
+
+/* controls */
+.controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-bottom: 14px; }
+.seg { display: inline-flex; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+.seg button { font: inherit; font-size: 14px; border: 0; background: transparent; color: var(--ink); padding: 6px 18px; border-radius: 999px; cursor: pointer; }
+.seg button small { color: var(--muted); margin-left: 4px; font-size: 12px; }
+.seg button[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); font-weight: 700; }
+.seg button[aria-selected="true"] small { color: var(--accent-ink); opacity: .85; }
+.chips { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.chips .lab { font-size: 13px; color: var(--muted); margin-right: 2px; }
+.chips button, .chips .chip { font: inherit; font-size: 13.5px; padding: 4px 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; text-decoration: none; }
+.chips button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+.seg button:focus-visible, .chips button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.empty { padding: 18px; text-align: center; color: var(--muted); background: var(--surface); border: 1px dashed var(--line); border-radius: 10px; }
+
+/* candidate cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 12px; align-items: start; }
+.grid[hidden], .cand[hidden], .tline[hidden], .empty[hidden] { display: none; }
+.cand { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.cand h3 { font-size: 19px; font-weight: 900; line-height: 1.25; }
+.party { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; margin-top: 2px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--p0); flex: 0 0 10px; }
+.dot.p1 { background: var(--p1); } .dot.p2 { background: var(--p2); } .dot.p3 { background: var(--p3); }
+.dot.p4 { background: var(--p4); } .dot.p5 { background: var(--p5); } .dot.p6 { background: var(--p6); }
+.tline { background: var(--accent-soft); color: var(--accent); border-radius: 8px; padding: 6px 10px; font-size: 14px; font-weight: 700; }
+.cand dl { display: grid; gap: 2px; }
+.cand dt { font-size: 11.5px; letter-spacing: .08em; color: var(--muted); margin-top: 6px; }
+.cand dd { font-size: 14.5px; }
+.notice { background: var(--warn-soft); border-left: 3px solid var(--warn-line); border-radius: 0 8px 8px 0; padding: 7px 10px; font-size: 14px; }
+.notice span { display: block; font-size: 11.5px; letter-spacing: .08em; color: var(--warn); font-weight: 700; }
+.notice.quiet { background: transparent; border-left-color: var(--line); color: var(--muted); }
+.notice.quiet span { color: var(--muted); }
+details { border-top: 1px solid var(--line); padding-top: 8px; margin-top: 2px; }
+summary { cursor: pointer; font-size: 13.5px; color: var(--accent); font-weight: 700; list-style: none; padding: 2px 0; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "+ "; }
+details[open] > summary::before { content: "− "; }
+.det { font-size: 13.5px; margin-top: 6px; }
+.det h4 { font-size: 12.5px; letter-spacing: .06em; color: var(--muted); margin: 10px 0 3px; }
+.det ul { padding-left: 18px; }
+.det li { margin-bottom: 3px; }
+
+/* who */
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.trio > div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.trio h3 { font-size: 15px; color: var(--accent); }
+.trio p { font-size: 14px; margin-top: 2px; }
+#who .small { margin-top: 8px; }
+
+/* trustees */
+.teams { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 10px; }
+.team { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; min-width: 0; }
+.team h4 { font-size: 14px; color: var(--accent); margin-bottom: 6px; }
+.team ul { list-style: none; padding: 0; display: grid; gap: 5px; }
+.team li { font-size: 13.5px; line-height: 1.5; }
+.team li b { margin-right: 6px; }
+.team li span { color: var(--muted); }
+
+/* checklist */
+.checks { list-style: none; padding: 0; display: grid; gap: 8px; }
+.checks li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 11px 14px 11px 40px; position: relative; font-size: 14.5px; }
+.checks li::before { content: "✓"; position: absolute; left: 14px; top: 11px; color: var(--accent); font-weight: 900; }
+
+/* more */
+#more details { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; margin: 0 0 8px; }
+#more summary { font-size: 14.5px; }
+#more .det ul { padding-left: 18px; }
+.tw { overflow-x: auto; }
+.ref-table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 12.5px; }
+.ref-table th { text-align: left; padding: 6px 8px; color: var(--muted); border-bottom: 1px solid var(--line); }
+.ref-table td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; word-break: break-all; color: var(--muted); }
+.ref-id { font-weight: 700; color: var(--ink); white-space: nowrap; }
+.g { font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); }
+.foot { margin-top: 30px; text-align: center; font-size: 12.5px; color: var(--muted); }
+
+@media (max-width: 720px) {
+  .how ol, .trio { grid-template-columns: 1fr; }
+  .hero { border-radius: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.mail { user-select: all; font-weight: 700; color: var(--ink); }
+
+/* city picker: the required first choice */
+.picker { background: var(--surface); border: 2px solid var(--accent); border-radius: 14px; padding: 16px clamp(14px, 3vw, 22px) 18px; margin-bottom: 14px; }
+.step { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--muted); }
+.step b { background: var(--accent); color: var(--accent-ink); border-radius: 999px; padding: 1px 10px; font-weight: 700; }
+.q { font-size: clamp(20px, 4.5vw, 26px); font-weight: 900; margin: 6px 0 12px; }
+.cities { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cities button { font: inherit; text-align: left; cursor: pointer; background: var(--accent-soft); color: var(--ink); border: 2px solid var(--accent); border-radius: 12px; padding: 14px 16px; display: grid; gap: 2px; position: relative; min-width: 0; }
+.cities button b { font-size: clamp(22px, 5vw, 30px); font-weight: 900; line-height: 1.2; }
+.cities button span { font-size: 13px; color: var(--muted); }
+.cities button i { font-style: normal; font-size: 13px; font-weight: 700; color: var(--accent); margin-top: 6px; }
+.cities button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.cities button[aria-pressed="true"] span, .cities button[aria-pressed="true"] i { color: var(--accent-ink); }
+.cities button[aria-pressed="true"] i::before { content: "✓ 已选择"; }
+.cities button[aria-pressed="true"] i { font-size: 0; }
+.cities button[aria-pressed="true"] i::before { font-size: 13px; }
+.cities button:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.prompt { text-align: center; padding: 22px 12px; color: var(--muted); border: 2px dashed var(--line); border-radius: 12px; font-size: 15px; }
+.prompt[hidden], .chips[hidden] { display: none; }
+.chips { margin-bottom: 12px; }
+@media (max-width: 480px) { .cities { grid-template-columns: 1fr; } }
+
+.trustee[hidden] { display: none; }
+
+.picker.nudge { box-shadow: 0 0 0 5px var(--accent-soft), 0 0 0 7px var(--accent); }
+</style>
+</head><body>
+
+<div class="shell">
+
+<header class="hero">
+  <p class="eyebrow">2026 大温市政选举</p>
+  <h1>素里 · 列治文<br>市长候选人对照</h1>
+  <div class="hero-row">
+    <div class="datebox"><b>10 月 17 日</b><span>周六 · 投票日</span></div>
+    <div class="count" id="count">投票日 2026-10-17</div>
+  </div>
+  <p class="by">作者 Patrick Yang · AI 辅助整理 · 资料检查 2026-10-06</p>
+</header>
+
+<section class="how" aria-label="怎么用">
+  <ol>
+    <li><b>选择你投票的城市</b><span>素里或列治文</span></li>
+    <li><b>再选一件你最在意的事</b><span>物业税、治安、住房，看每个人怎么说</span></li>
+    <li><b>想深入，点「看细节与出处」</b><span>每个说法都有来源链接</span></li>
+  </ol>
+  <p class="three"><b>判断任何一个承诺，问三件事：</b>这件事市长管得了吗？说了钱从哪来吗？和他过去做的一致吗？多数候选人都没写钱从哪来，所以不逐个标出，请自己对照。<strong>本文不推荐投谁。</strong></p>
+</section>
+
+<nav class="nav" aria-label="目录">
+  <a href="#cands">候选人</a><a href="#who">谁管什么</a><a href="#school">教委</a><a href="#vote">投票清单</a><a href="#more">备注与来源</a>
+</nav>
+
+<section id="cands">
+  <h2>14 位市长候选人</h2>
+  <div class="picker" id="picker">
+    <p class="step"><b>第一步</b>必选</p>
+    <h3 class="q">你在哪个城市投票？</h3>
+    <div class="cities">
+      <button type="button" data-city="surrey" aria-pressed="false"><b>素里</b><span>市长 7 位 · 议员 8 席 · 教委 6 席</span><i>选这里</i></button>
+      <button type="button" data-city="richmond" aria-pressed="false"><b>列治文</b><span>市长 7 位 · 议员 8 席 · 教委 7 席</span><i>选这里</i></button>
+    </div>
+  </div>
+  <div class="chips" id="chips" aria-label="按关心的事筛选" hidden>
+    <span class="lab">我最在意</span>
+    <button data-topic="all" aria-pressed="true">全部</button>
+    <button data-topic="tax" aria-pressed="false">物业税</button>
+    <button data-topic="safety" aria-pressed="false">治安</button>
+    <button data-topic="housing" aria-pressed="false">住房</button>
+    <a class="chip" href="#school">学校 →</a>
+  </div>
+  <p class="prompt" id="prompt">请先选择你投票的城市，下面会显示这个城市的候选人。</p>
+  <p class="empty" id="empty" hidden>这个城市里没有候选人明确提到这件事。</p>
+  <div class="grid" id="grid-surrey"><article class="cand" data-city="surrey" data-tags="tax safety housing" data-topics='{&quot;tax&quot;: &quot;自述物业税保持在区域最低之列&quot;, &quot;safety&quot;: &quot;市府计划增 560 名安全人员、建培训园区&quot;, &quot;housing&quot;: &quot;自述已批准数千套新住房&quot;}'><header><div><h3>Brenda Locke</h3><p class="party"><i class="dot p1"></i>Surrey Connect</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>水上中心、公共安全园区<sup class="cite">[15]</sup></dd><dt>背景</dt><dd>现任市长；自述已建成 Cloverdale 冰场等<sup class="cite">[15]</sup></dd></dl><p class="notice"><span>值得留意</span>警务官司败诉；换地案争议（见细节）</p><details><summary>看细节与出处</summary><div class="det"><h4>记录与争议</h4><ul><li>2024-05 警务过渡司法复核败诉，律师费 1,283,065.99 元<sup class="cite">[1][2]</sup>。</li><li>换地案：三块市有地换 Wesgroup 地块，两边估值均 1.166 亿，无现金；EY 认定公允（2026-06-02）。McCallum 称「救助开发商」，Locke 否认<sup class="cite">[3][4]</sup>。</li><li>警长 Lipinski 2026-06 被警委会解职，主席辞职；Lipinski 称 Locke 是幕后推手（一方说法），复核未决<sup class="cite">[5][6]</sup>。</li></ul></div></details></article><article class="cand" data-city="surrey" data-tags="tax safety" data-topics='{&quot;tax&quot;: &quot;四年物业税零增长&quot;, &quot;safety&quot;: &quot;扩警、直升机与无人机队&quot;}'><header><div><h3>Doug McCallum</h3><p class="party"><i class="dot p2"></i>Safe Surrey</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>四年物业税零增长、SkyTrain 到 Newton<sup class="cite">[14]</sup></dd><dt>背景</dt><dd>前市长，约 13 年<sup class="cite">[14]</sup></dd></dl><p class="notice"><span>值得留意</span>零增长，与上任期地块税翻三倍</p><details><summary>看细节与出处</summary><div class="det"><h4>承诺里没说清的地方</h4><ul><li>「零增长」是否含地块税等收费，未说明；他上任期曾把地块税翻三倍<sup class="cite">[9][10]</sup>。</li><li>SkyTrain 需省、联邦、TransLink 出资，未说明资金来源<sup class="cite">[17]</sup>。</li></ul><h4>记录与争议</h4><ul><li>2022 年公共妨扰案判无罪，法官认定他对警方的陈述属实<sup class="cite">[7][8]</sup>。</li><li>2021 预算：物业税涨 2.9%，同时地块税 100→300 元，普通独立屋多交约 260 元<sup class="cite">[9][10]</sup>。</li></ul></div></details></article><article class="cand" data-city="surrey" data-tags="safety" data-topics='{&quot;safety&quot;: &quot;增 300 警员、建培训中心&quot;}'><header><div><h3>Linda Annis</h3><p class="party"><i class="dot p3"></i>Surrey First</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>叫停体育馆、增 300 警员<sup class="cite">[16][24]</sup></dd><dt>背景</dt><dd>现任议员；Metro Vancouver Crime Stoppers 执行总监<sup class="cite">[14]</sup></dd></dl><p class="notice"><span>值得留意</span>叫停已批准的换地案；与前警长短信在被调查</p><details><summary>看细节与出处</summary><div class="det"><h4>承诺里没说清的地方</h4><ul><li>叫停体育馆：换地案已于 2026-06-02 获议会批准，<b>没说明如何处理</b><sup class="cite">[3]</sup>。</li><li>她估体育馆 6 亿，市府约 3.6 亿，<b>差额未解释</b><sup class="cite">[3][24]</sup>。</li></ul><h4>记录与争议</h4><ul><li>与前警长 Lipinski 的往来被市伦理专员与省级警务监督机构调查，未出结论<sup class="cite">[11][12]</sup>。</li><li>犬只咬人案：受害者称「27 针」是笔误，实际约 9–11 针；罚 700 元，民事诉讼中<sup class="cite">[12]</sup>。</li></ul></div></details></article><article class="cand" data-city="surrey" data-tags="tax safety housing" data-topics='{&quot;tax&quot;: &quot;每户减 600 元并冻结四年&quot;, &quot;safety&quot;: &quot;600 名警务人员、校园联络警员&quot;, &quot;housing&quot;: &quot;房屋保障基金&quot;}'><header><div><h3>Honveer Randhawa</h3><p class="party"><i class="dot p4"></i>Conservative</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>每户减税 600 元、免费装水表、建 Newton 医院<sup class="cite">[17]</sup></dd><dt>背景</dt><dd>律师；平台逐项写明如何公布进度<sup class="cite">[17]</sup></dd></dl><p class="notice"><span>值得留意</span>减税与新增开支如何兼顾；医院由省管</p><details><summary>看细节与出处</summary><div class="det"><h4>承诺里没说清的地方</h4><ul><li><b>每户减 600 元并冻结四年</b>、不削减服务，同时新增警员、免费装水表、房屋保障基金、培训中心；资金来源只写「审计」和「AI」，<b>无金额、无总成本</b><sup class="cite">[17]</sup>。</li><li>警员数前后不一：新闻稿 600 人，平台页写补 750 人缺口<sup class="cite">[17]</sup>。</li><li>医院、SkyTrain 是向省与联邦的请求，他自己也写明市长无法单独出资<sup class="cite">[17]</sup>。</li></ul><h4>记录与争议</h4><ul><li>教育承诺（家长行动委员会）是向学区倡议；课程属省、教材属教委<sup class="cite">[17][40]</sup>。</li><li>2024 省选差 22 票落败<sup class="cite">[14]</sup>。</li></ul></div></details></article><article class="cand" data-city="surrey" data-tags="safety housing" data-topics='{&quot;safety&quot;: &quot;安全街区&quot;, &quot;housing&quot;: &quot;租转买&quot;}'><header><div><h3>Troy Van Vliet</h3><p class="party"><i class="dot p5"></i>Surrey Now</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>安全、增长、租转买<sup class="cite">[18]</sup></dd><dt>背景</dt><dd>建筑商；自述参与创办 St. John Paul II Academy<sup class="cite">[14]</sup></dd></dl><p class="notice"><span>值得留意</span>审批中如何避免利益冲突</p><details><summary>看细节与出处</summary><div class="det"><h4>承诺里没说清的地方</h4><ul><li>「租转买」<b>无机制与资金</b>；开发商背景下<b>未提利益回避机制</b><sup class="cite">[14][18]</sup>。</li></ul></div></details></article><article class="cand" data-city="surrey" data-tags="housing" data-topics='{&quot;housing&quot;: &quot;空置房税、每年 1,000 套支持性住房&quot;}'><header><div><h3>Mike Starchuk</h3><p class="party"><i class="dot p6"></i>Imagine Surrey</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>空置房税、支持性住房<sup class="cite">[20]</sup></dd><dt>背景</dt><dd>前市议员、前省议员；消防系统工作 32 年<sup class="cite">[14]</sup></dd></dl><p class="notice quiet"><span>值得留意</span>无特别提醒</p></article><article class="cand" data-city="surrey" data-tags="housing" data-topics='{&quot;housing&quot;: &quot;居民拥有住房的通道&quot;}'><header><div><h3>Igal Ammons-II</h3><p class="party"><i class="dot p1"></i>New Surrey+</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>比例代表、居民拥有住房<sup class="cite">[14]</sup></dd><dt>背景</dt><dd>家庭辅导员、作家<sup class="cite">[14]</sup></dd></dl><p class="notice quiet"><span>值得留意</span>无特别提醒</p></article></div>
+  <div class="grid" id="grid-richmond"><article class="cand" data-city="richmond" data-tags="" data-topics='{}'><header><div><h3>Kash Heed</h3><p class="party"><i class="dot p6"></i>无团队</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>官方简介没有具体政策<sup class="cite">[26]</sup></dd><dt>背景</dt><dd>现任议员；曾任警长、省议员<sup class="cite">[26][36]</sup></dd></dl><p class="notice"><span>值得留意</span>提出吸毒点提案；被指曾任药企顾问（第三方）</p><details><summary>看细节与出处</summary><div class="det"><h4>记录与争议</h4><ul><li>2024-02 议员 Heed 与 Gillanders 在议会提出「动议」（即交付表决的提案）：请卫生局研究在本市设立监督式吸毒点（吸毒者在医护人员监督下使用）。议会 7:2 通过；真要设点还需联邦批准<sup class="cite">[28][29]</sup>。</li><li>倡导性网站称他 2023-03 起任 Lucy Scientific 特别顾问，约 11 月结束，表决时未记录回避；他称与动议无关<sup class="cite">[31]</sup>（第三方）。</li><li>2010 年竞选团队超支，法院认定他不知情，仍罚 8,000 元<sup class="cite">[36]</sup>。</li></ul></div></details></article><article class="cand" data-city="richmond" data-tags="safety housing" data-topics='{&quot;safety&quot;: &quot;确保安全社区&quot;, &quot;housing&quot;: &quot;可负担住房&quot;}'><header><div><h3>Alexa Loo</h3><p class="party"><i class="dot p2"></i>Richmond Strong</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>安全、基建、农业、住房<sup class="cite">[26]</sup></dd><dt>背景</dt><dd>现任议员 12 年；注册会计师；两届奥运选手<sup class="cite">[26]</sup></dd></dl><p class="notice"><span>值得留意</span>吸毒点提案先支持后反对</p><details><summary>看细节与出处</summary><div class="det"><h4>记录与争议</h4><ul><li>对上面这项提案：她先在小组委员会上支持，正式全体表决时改投反对<sup class="cite">[28][30]</sup>。</li></ul></div></details></article><article class="cand" data-city="richmond" data-tags="tax safety housing" data-topics='{&quot;tax&quot;: &quot;外部审查以保持低税&quot;, &quot;safety&quot;: &quot;公园与开放空间安全&quot;, &quot;housing&quot;: &quot;可负担长者住房&quot;}'><header><div><h3>Rob Howard</h3><p class="party"><i class="dot p3"></i>Richmond Forward</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>长者住房、物有所值审查<sup class="cite">[26]</sup></dd><dt>背景</dt><dd>前议员、前省议员；做过长者住宅<sup class="cite">[26]</sup></dd></dl><p class="notice quiet"><span>值得留意</span>无特别提醒</p></article><article class="cand" data-city="richmond" data-tags="" data-topics='{}'><header><div><h3>Dickens Cheung</h3><p class="party"><i class="dot p4"></i>We Are Richmond</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>「服务型领导」，无具体政策<sup class="cite">[26]</sup></dd><dt>背景</dt><dd>经营草本茶制造 15 年<sup class="cite">[26]</sup></dd></dl><p class="notice quiet"><span>值得留意</span>无特别提醒</p></article><article class="cand" data-city="richmond" data-tags="safety" data-topics='{&quot;safety&quot;: &quot;安全第一&quot;}'><header><div><h3>Mei Kang</h3><p class="party"><i class="dot p5"></i>Action Richmond</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>安全、家庭、透明、经济<sup class="cite">[26]</sup></dd><dt>背景</dt><dd>教育机构创办人，称服务家庭 20 年<sup class="cite">[26]</sup></dd></dl><p class="notice quiet"><span>值得留意</span>无特别提醒</p></article><article class="cand" data-city="richmond" data-tags="safety housing" data-topics='{&quot;safety&quot;: &quot;24 小时社区巡逻、取缔毒品屋&quot;, &quot;housing&quot;: &quot;降低联排与公寓管理费&quot;}'><header><div><h3>Goldentiger King</h3><p class="party"><i class="dot p6"></i>无团队</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>5,000 就业、巡逻、降管理费<sup class="cite">[26]</sup></dd><dt>背景</dt><dd>前电视导演、创业者；目标有具体数字<sup class="cite">[26]</sup></dd></dl><p class="notice"><span>值得留意</span>多项承诺不归市府管</p><details><summary>看细节与出处</summary><div class="det"><h4>承诺里没说清的地方</h4><ul><li>「降低联排与公寓月费」：此类费用通常由业主管理团体定，非市府（<b>作者分析</b>）；5,000 就业、24 小时巡逻<b>无成本</b><sup class="cite">[26]</sup>。</li></ul></div></details></article><article class="cand" data-city="richmond" data-tags="" data-topics='{}'><header><div><h3>Dennet Lee</h3><p class="party"><i class="dot p6"></i>无团队</p></div></header><p class="tline" hidden></p><dl><dt>主要承诺</dt><dd>无政策，主张先倾听<sup class="cite">[26]</sup></dd><dt>背景</dt><dd>独立参选<sup class="cite">[26]</sup></dd></dl><p class="notice quiet"><span>值得留意</span>无特别提醒</p></article></div>
+</section>
+
+<section id="who">
+  <h2>谁管什么</h2>
+  <div class="trio">
+    <div><h3>市议会</h3><p>物业税、土地分区、市政附例、本地警务预算</p></div>
+    <div><h3>省政府</h3><p>课程框架、医院、毒品政策<sup class="cite">[40]</sup></p></div>
+    <div><h3>学区教委</h3><p>学校预算、校舍与临时教室、校内图书与教材<sup class="cite">[40]</sup></p></div>
+  </div>
+  <p class="small">市长在议会里只有一票，议员和教委同样重要。</p>
+</section>
+
+<section id="school">
+  <h2>教委候选人</h2>
+  <p class="small">以下要点均为候选人自述，没有独立核实。</p>
+  <p class="prompt" id="prompt2">请先在上面选择你投票的城市，这里会显示对应的教委候选人。</p>
+  <div class="trustee" data-city="surrey" hidden>
+    <h3 class="sub">素里 <small>24 位，选 6 位<sup class="cite">[21][41]</sup></small></h3>
+    <div class="teams"><section class="team"><h4>Surrey First Education · （6 位，全是现任）</h4><ul><li><b>Terry Allen</b><span>任教委 24 年，预算委员会主席</span></li><li><b>Bob Holmes</b><span>2014 年起，BC 教委协会副主席</span></li><li><b>Laurie Larsen</b><span>18 年，曾在市府工作 27 年</span></li><li><b>Garry Thind</b><span>12 年以上</span></li><li><b>Gary Tymoschuk</b><span>12 年，现任教委主席，曾两届市议员</span></li><li><b>Shawn Wilson</b><span>27 年</span></li></ul></section><section class="team"><h4>Surrey Now · （6 位）</h4><ul><li><b>Vanessa Gilera</b><span>呼吸治疗师；校舍跟上增长、特殊需求</span></li><li><b>Michelle Ceniza</b><span>家庭医生</span></li><li><b>Rohit D'Silva</b><span>工程与 MBA，企业背景</span></li><li><b>Venson Wang</b><span>财富管理、创业者</span></li><li><b>John Banovich、Vincent Tighe</b><span>官方简介为空</span></li></ul></section><section class="team"><h4>Our Surrey · （4 位）</h4><ul><li><b>Dean McGee</b><span>前 Surrey DPAC 主席，家长团体</span></li><li><b>Anne Whitmore</b><span>Surrey DPAC 主席，休假中</span></li><li><b>Kyle Jones</b><span>教育助理、CUPE 工会干部</span></li><li><b>Vick Karan</b><span>CUPE 718 财务，市府工作</span></li></ul></section><section class="team"><h4>无团队 · （8 位）</h4><ul><li><b>Harjit Bhullar</b><span>地产经纪；校园安全、禁烟毒</span></li><li><b>Amrit Birring</b><span>单一议题：反对 SOGI 123、提高学术标准</span></li><li><b>Gurleen Chahal</b><span>护理学生；要永久校舍</span></li><li><b>Noor Cheema</b><span>在校区工作 4 年；校舍容量</span></li><li><b>Meena Kochher</b><span>BC 儿童医院 20 年</span></li><li><b>Ghulam Mujtaba</b><span>环境工程师</span></li><li><b>Afzalur Rahman</b><span>教授，教学 16 年</span></li><li><b>Gary B. Hee</b><span>官方简介为空</span></li></ul></section></div>
+  </div>
+  <div class="trustee" data-city="richmond" hidden>
+    <h3 class="sub">列治文 <small>28 位，选 7 位<sup class="cite">[25][26]</sup></small></h3>
+    <div class="teams"><section class="team"><h4>Advance Richmond · （6 位）</h4><ul><li><b>Rod Belleza</b><span>现任，第 3 届</span></li><li><b>Dean Billings</b><span>公共部门软件顾问，曾任 Richmond DPAC 主席</span></li><li><b>Danny Chang</b><span>企业主</span></li><li><b>Willy Sinconegue</b><span>财务专业，Bayanihan Society 会长</span></li><li><b>Phyllis Tang</b><span>钢琴教师，2018 年曾参选温哥华市议员</span></li><li><b>Sophia Woo</b><span>社工硕士，前温哥华教委</span></li></ul></section><section class="team"><h4>Richmond Education Party · （4 位）</h4><ul><li><b>Ken Hamaguchi</b><span>现任，竞选第 4 届</span></li><li><b>Heather Larson</b><span>现任，2018 年起</span></li><li><b>Martin Li</b><span>UBC 毕业，人力资源</span></li><li><b>Bill Mok</b><span>圣公会牧师、前工程师</span></li></ul></section><section class="team"><h4>Empower Education Richmond · （3 位）</h4><ul><li><b>Debbie Tablotney</b><span>2002 年起任教委</span></li><li><b>David Yang</b><span>现任，过去四年</span></li><li><b>Sandra Nixon</b><span>前教委两届，曾任主席，联合教会牧师</span></li></ul></section><section class="team"><h4>Common Sense · （1 位）</h4><ul><li><b>Alice Wong</b><span>任教委两届</span></li></ul></section><section class="team"><h4>无团队 · （14 位）</h4><ul><li><b>Donna Sargent</b><span>多届教委</span></li><li><b>Helen Quan</b><span>餐饮业，管理经验 40 年</span></li><li><b>Nancy Williams</b><span>教育助理、工会副主席</span></li><li><b>Hongyun Chen</b><span>医学与分子生物学博士，教育出版 20 年</span></li><li><b>Lawrence Chen</b><span>MBA，船舶工程</span></li><li><b>Calvin Dang</b><span>海鲜肉类店主</span></li><li><b>Kiana Dashtbazi</b><span>单亲母亲，校内午间监督</span></li><li><b>Kay Hale</b><span>国际商务 28 年</span></li><li><b>Aithan Kang</b><span>会计学生</span></li><li><b>Ausha Kang</b><span>本地毕业生</span></li><li><b>Vivien Lee</b><span>三个孩子的母亲</span></li><li><b>Stefan Mladenovic</b><span>本地居民</span></li><li><b>Jordan Oye</b><span>本地毕业生，金融与项目管理</span></li><li><b>John Zhang</b><span>外语学校创办人</span></li></ul></section></div>
+  </div>
+</section>
+
+<section id="vote">
+  <h2>投票清单</h2>
+  <ul class="checks"><li><strong>资格<sup class="cite">[39]</sup>：</strong>18 岁以上加拿大公民，在 BC 住满 6 个月，并是该市居民，或在该市拥有产权满 30 天。永久居民不能投票。</li><li><strong>证件<sup class="cite">[39]</sup>：</strong>现场登记带 2 份证件（至少 1 份有签名），证明身份与住址；<strong>不要求照片</strong>。</li><li><strong>票数：</strong>列治文选 8 名议员、7 名教委<sup class="cite">[27]</sup>。不认同就不必填满。</li><li><strong>教委票：</strong>学校预算、图书与教材归教委<sup class="cite">[40]</sup>，名单见上表。提前投票日请以市府公告为准。</li></ul>
+</section>
+
+<section id="more">
+  <h2>备注与来源</h2>
+  <details><summary>备注</summary><div class="det"><p>
+<strong>来源标记：</strong><span class="g g-off">官方</span> 政府文件　<span class="g g-med">媒体</span> 主流报道　<span class="g g-self">自述</span> 候选人自己的话　<span class="g g-3rd">第三方</span> 有立场或非主流。角标 [n] 对应上方附录。<br>
+<strong>列治文民调：</strong>6 月 Pallas 民调（Heed 20%、Loo 8.5%、Howard 5.9%）由保守派选民联盟委托，样本 304，且 Starrett 已退出市长竞选，仅供参考<sup class="cite">[34][35]</sup>。<br>
+<strong>写什么、不写什么：</strong>多数竞选材料不写成本和具体措施，这是常态，本文不逐人指出；只在候选人之间有明显差别、或与其过往记录或职权冲突时才写。<br>
+<strong>声明：</strong>本文为作者个人评论，内容由 AI 辅助整理，来源均已列出，请以原始来源为准；未受任何候选人或团体资助；查不到来源的内容未写入正文，见「待补清单」。<br>
+<strong>更正反馈：</strong>发现事实错误，请联系 330259362@qq.com。
+</p></div></details>
+  <details><summary>待补清单（查不到来源，未写入正文）</summary><div class="det"><ul>
+<li>Heed：「32 年警务」；Lucy Scientific 有无监管结论。Loo：Cowichan 立场。Howard：对省府住房政策的主张。Gary Law 履历。</li>
+<li>Locke 的「15 亿」「3.5 亿公安园区」造价；McCallum 的「取消闭门会议」；Van Vliet 的董事职务。</li>
+<li>教委候选人的履历核实（上表只是自述）；竞选期间第三方广告规则（Elections BC），发布或付费推广前需核对。</li>
+</ul></div></details>
+  <details><summary>来源链接（41 条）</summary><div class="det"><div class="tw"><table class="ref-table">
+    <thead><tr><th style="width:6%">#</th><th style="width:7%">等级</th><th style="width:25%">来源</th><th>网址</th></tr></thead>
+    <tbody>
+      <tr><td class="ref-id">[1]</td><td>媒体</td><td>CTV News：法院维持省府对素里警务过渡的决定（2024-05）</td><td>https://bc.ctvnews.ca/b-c-government-decision-on-surrey-police-transition-upheld-in-court-minister-says-1.6898329</td></tr>
+      <tr><td class="ref-id">[2]</td><td>媒体</td><td>CTV News：素里为法律挑战花了多少</td><td>https://bc.ctvnews.ca/here-s-how-much-the-city-of-surrey-spent-on-its-legal-challenge-to-the-police-transition-1.6959340</td></tr>
+      <tr><td class="ref-id">[3]</td><td>媒体</td><td>Daily Hive：素里 1.166 亿换地案（2026-07-01）</td><td>https://dailyhive.com/vancouver/city-of-surrey-wesgroup-properties-vancouver-giants-arena-land-swap-deal</td></tr>
+      <tr><td class="ref-id">[4]</td><td>第三方</td><td>Ground News 聚合：Locke 否认「救助开发商」（内容被付费墙遮挡，仅见标题）</td><td>https://ground.news/article/surrey-mayor-brenda-locke-denies-bailing-out-developer-on-arena-deal</td></tr>
+      <tr><td class="ref-id">[5]</td><td>媒体</td><td>CTV News：前警长称因政治被解职并申请司法复核（2026-06）</td><td>https://www.ctvnews.ca/vancouver/article/former-bc-police-chief-blames-politics-for-firing-seeks-judicial-review/</td></tr>
+      <tr><td class="ref-id">[6]</td><td>媒体</td><td>CTV News：警委会主席因警长被解职辞职</td><td>https://www.ctvnews.ca/vancouver/article/chair-of-surrey-police-board-resigns-over-chiefs-firing-citing-political-tentacles/</td></tr>
+      <tr><td class="ref-id">[7]</td><td>媒体</td><td>BIV：McCallum 被判公共妨扰罪名不成立（2022-11）</td><td>https://biv.com/article/2022/11/ex-surrey-mayor-doug-mccallum-not-guilty-public-mischief</td></tr>
+      <tr><td class="ref-id">[8]</td><td>媒体</td><td>Surrey Now-Leader：McCallum 被判无罪</td><td>https://www.surreynowleader.com/news/doug-mccallum-found-not-guilty-of-public-mischief/</td></tr>
+      <tr><td class="ref-id">[9]</td><td>媒体</td><td>BIV：素里 2021 预算（地块税涨至 300 元）</td><td>https://biv.com/article/2020/12/surrey-hikes-taxes-107-controversial-city-budget</td></tr>
+      <tr><td class="ref-id">[10]</td><td>媒体</td><td>CityNews 1130：素里物业税 2.9% 与预算（2020-11-16）</td><td>https://www.citynews1130.com/2020/11/16/surrey-property-tax-increase/</td></tr>
+      <tr><td class="ref-id">[11]</td><td>官方</td><td>Surrey Police Board：审查媒体报道的不当沟通（2026-01-19）</td><td>https://surreypoliceboard.ca/news-events/news/surrey-police-board-review-of-publicly-reported-matter</td></tr>
+      <tr><td class="ref-id">[12]</td><td>媒体</td><td>Global News：Annis 犬伤诉讼（2026-09-15）</td><td>https://globalnews.ca/news/12060099/lawsuit-filed-surrey-councillor-dog-biting/</td></tr>
+      <tr><td class="ref-id">[13]</td><td>媒体</td><td>Daily Hive：McCallum 竞选承诺（2026-04-13）与退出 Metro Vancouver</td><td>https://dailyhive.com/vancouver/doug-mccallum-surrey-2026</td></tr>
+      <tr><td class="ref-id">[14]</td><td>官方·自述</td><td>City of Surrey：市长候选人个人简介（七位）</td><td>https://www.surrey.ca/2026-municipal-election/candidates/candidates-office-of-mayor</td></tr>
+      <tr><td class="ref-id">[15]</td><td>自述</td><td>Surrey Connect 竞选网站</td><td>https://www.surrey-connect.ca</td></tr>
+      <tr><td class="ref-id">[16]</td><td>自述</td><td>Surrey First 竞选网站</td><td>https://surreyfirst.org</td></tr>
+      <tr><td class="ref-id">[17]</td><td>自述</td><td>Randhawa 竞选平台页</td><td>https://surreyconservatives.com/platform</td></tr>
+      <tr><td class="ref-id">[18]</td><td>自述</td><td>Surrey Now 竞选网站</td><td>https://surreynow.ca</td></tr>
+      <tr><td class="ref-id">[19]</td><td>自述</td><td>Imagine Surrey 竞选网站</td><td>https://www.imaginesurrey.ca</td></tr>
+      <tr><td class="ref-id">[20]</td><td>媒体</td><td>Daily Hive：Starchuk 空置房税与支持性住房</td><td>https://dailyhive.com/vancouver/imagine-surrey-mike-starchuk-empty-homes-tax-supportive-housing</td></tr>
+      <tr><td class="ref-id">[21]</td><td>第三方</td><td>维基：2026 Surrey municipal election</td><td>https://en.wikipedia.org/wiki/2026_Surrey_municipal_election</td></tr>
+      <tr><td class="ref-id">[22]</td><td>官方</td><td>City of Surrey：公共安全扩张（560 人、培训园区）</td><td>https://www.surrey.ca/news-events/news/major-public-safety-expansion-more-officers-new-training-campus-coming-surrey</td></tr>
+      <tr><td class="ref-id">[23]</td><td>官方</td><td>City of Surrey：重大资本项目更新（2026-02-27）</td><td>https://www.surrey.ca/news-events/news/surrey-accelerates-delivery-of-major-capital-projects-across-city</td></tr>
+      <tr><td class="ref-id">[24]</td><td>媒体</td><td>Global News：Annis 要求就体育馆公投、估价约 6 亿</td><td>https://globalnews.ca/news/11488349/surrey-councillor-entertainment-district-plan-election-ballot</td></tr>
+      <tr><td class="ref-id">[25]</td><td>官方</td><td>City of Richmond：候选人声明（2026-09-11）</td><td>https://www.richmond.ca/__shared/assets/Declaration_of_Candidates_-_2026_Election79709.pdf</td></tr>
+      <tr><td class="ref-id">[26]</td><td>官方·自述</td><td>City of Richmond：候选人名单与个人简介（ID 65/78/54/66/99/87/69）</td><td>https://richmond.ca/city-hall/elections/candidateslist.htm</td></tr>
+      <tr><td class="ref-id">[27]</td><td>官方</td><td>City of Richmond：选举公告（1 市长、8 议员、7 教委）</td><td>https://richmond.ca/city-hall/news/2026/rmdelection28jul2026.htm</td></tr>
+      <tr><td class="ref-id">[28]</td><td>媒体</td><td>CBC：列治文议会投票支持注射点动议</td><td>https://www.cbc.ca/news/canada/british-columbia/richmond-consumption-site-vote-1.7112265</td></tr>
+      <tr><td class="ref-id">[29]</td><td>媒体</td><td>Richmond News：议会 7:2 通过探索监督式吸毒点</td><td>https://www.richmond-news.com/local-news/richmond-council-votes-7-2-to-explore-supervised-consumption-site-8304417</td></tr>
+      <tr><td class="ref-id">[30]</td><td>媒体</td><td>Richmond News：激烈会议后投票（含 Loo 的说明）</td><td>https://richmond-news.com/local-opioid-crisis-news/raucous-richmond-meeting-ends-in-vote-to-explore-safe-consumption-site-8309284</td></tr>
+      <tr><td class="ref-id">[31]</td><td>第三方</td><td>Smart Richmond：Heed 与 Lucy Scientific 证据整理（倡导性网站）</td><td>https://smartrichmond.ca/kash-heed-lucy-scientific-evidence-review</td></tr>
+      <tr><td class="ref-id">[32]</td><td>第三方</td><td>Smart Richmond：候选人汇总与 Mei Kang 简介</td><td>https://smartrichmond.ca/richmond-election-candidates-2026</td></tr>
+      <tr><td class="ref-id">[33]</td><td>自述</td><td>Advance Richmond 官方网站</td><td>https://www.advancerichmond.com/election-2026/</td></tr>
+      <tr><td class="ref-id">[34]</td><td>媒体</td><td>Richmond News：Advance Richmond 增加四名候选人（Starrett 改参选议员）</td><td>https://www.richmond-news.com/local-news/advance-richmond-adds-four-more-candidates-to-slate-12760189</td></tr>
+      <tr><td class="ref-id">[35]</td><td>第三方</td><td>Pallas Data：列治文民调（2026-06-24 至 28，保守派选民联盟委托）</td><td>https://pallas-data.ca/2026/07/15/pallas-richmond-poll-heed-20-starrett-11-loo-9-and-half-the-city-still-undecided/</td></tr>
+      <tr><td class="ref-id">[36]</td><td>第三方</td><td>维基：Kash Heed</td><td>https://en.wikipedia.org/wiki/Kash_Heed</td></tr>
+      <tr><td class="ref-id">[37]</td><td>第三方</td><td>维基：Alexa Loo</td><td>https://en.wikipedia.org/wiki/Alexa_Loo</td></tr>
+      <tr><td class="ref-id">[38]</td><td>第三方</td><td>维基：Rob Howard (politician)</td><td>https://en.wikipedia.org/wiki/Rob_Howard_(politician)</td></tr>
+      <tr><td class="ref-id">[39]</td><td>官方</td><td>BC 政府：2026 年地方选举投票日 FAQ（资格与证件）</td><td>https://www2.gov.bc.ca/gov/content/governments/local-governments/governance-powers/general-local-elections/election-2026-faq-voting-day</td></tr>
+      <tr><td class="ref-id">[40]</td><td>第三方</td><td>SD68 整理：《学校法》中部长与教委的权限（第 168 条、第 85 条）</td><td>https://www.sd68.bc.ca/wp-content/uploads/GC-Authority-of-School-Board-and-the-Minister.pdf</td></tr>
+      <tr><td class="ref-id">[41]</td><td>官方·自述</td><td>City of Surrey：教委候选人名单与个人简介（24 位）</td><td>https://www.surrey.ca/2026-municipal-election/candidates/candidates-office-of-school-trustee</td></tr>
+    </tbody>
+  </table></div></div></details>
+</section>
+
+<footer class="foot">作者 Patrick Yang · 内容由 AI 辅助整理，请以原始来源为准 · 资料检查 2026-10-06<br>发现事实错误，请联系：<span class="mail">330259362@qq.com</span></footer>
+</div>
+<script>(function () {
+  var state = { city: null, topic: 'all' };
+  var names = { tax: '物业税', safety: '治安', housing: '住房' };
+  var cityBtns = document.querySelectorAll('.cities button');
+  var chipBtns = document.querySelectorAll('.chips button');
+  var cards = document.querySelectorAll('.cand');
+  var chips = document.getElementById('chips');
+  var prompt = document.getElementById('prompt');
+
+  function render() {
+    var shown = 0;
+    cards.forEach(function (c) {
+      var inCity = state.city && c.getAttribute('data-city') === state.city;
+      var tags = (c.getAttribute('data-tags') || '').split(' ');
+      var ok = inCity && (state.topic === 'all' || tags.indexOf(state.topic) > -1);
+      c.hidden = !ok;
+      var line = c.querySelector('.tline');
+      if (ok && state.topic !== 'all') {
+        var data = {};
+        try { data = JSON.parse(c.getAttribute('data-topics') || '{}'); } catch (e) {}
+        line.textContent = '关于' + names[state.topic] + '：' + (data[state.topic] || '');
+        line.hidden = false;
+      } else {
+        line.hidden = true;
+      }
+      if (ok) shown++;
+    });
+    document.getElementById('grid-surrey').hidden = state.city !== 'surrey';
+    document.getElementById('grid-richmond').hidden = state.city !== 'richmond';
+    document.querySelectorAll('.trustee').forEach(function (e) { e.hidden = e.getAttribute('data-city') !== state.city; });
+    var p2 = document.getElementById('prompt2');
+    if (p2) p2.hidden = !!state.city;
+    chips.hidden = !state.city;
+    prompt.hidden = !!state.city;
+    document.getElementById('empty').hidden = !(state.city && shown === 0);
+    cityBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-city') === state.city)); });
+    chipBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-topic') === state.topic)); });
+  }
+
+  cityBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      state.city = b.getAttribute('data-city');
+      state.topic = 'all';
+      render();
+      try { chips.scrollIntoView({ block: 'center' }); } catch (e) {}
+    });
+  });
+  chipBtns.forEach(function (b) { b.addEventListener('click', function () { state.topic = b.getAttribute('data-topic'); render(); }); });
+  render();
+
+  // "教委" links: with no city chosen, take the reader to the city picker instead of an empty section.
+  var picker = document.getElementById('picker');
+  document.querySelectorAll('a[href="#school"]').forEach(function (a) {
+    a.addEventListener('click', function (ev) {
+      if (state.city || !picker) return;
+      ev.preventDefault();
+      try { picker.scrollIntoView({ block: 'center' }); } catch (e) {}
+      picker.classList.add('nudge');
+      setTimeout(function () { picker.classList.remove('nudge'); }, 1800);
+    });
+  });
+
+  var el = document.getElementById('count');
+  if (el) {
+    var now = new Date();
+    var day = new Date(2026, 9, 17);
+    var t0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var n = Math.round((day - t0) / 86400000);
+    el.textContent = n > 0 ? '还有 ' + n + ' 天' : (n === 0 ? '今天投票' : '投票已结束');
+  }
+})();
+</script>
+
+</body></html>

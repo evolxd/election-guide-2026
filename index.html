@@ -167,6 +167,8 @@ details[open] > summary::before { content: "− "; }
 .trustee[hidden] { display: none; }
 
 .picker.nudge { box-shadow: 0 0 0 5px var(--accent-soft), 0 0 0 7px var(--accent); }
+
+.geo { margin-top: 10px; font-size: 13px; color: var(--muted); }
 </style>
 </head><body>
 
@@ -198,12 +200,13 @@ details[open] > summary::before { content: "− "; }
 <section id="cands">
   <h2>14 位市长候选人</h2>
   <div class="picker" id="picker">
-    <p class="step"><b>第一步</b>必选</p>
+    <p class="step"><b>第一步</b>确认城市</p>
     <h3 class="q">你在哪个城市投票？</h3>
     <div class="cities">
       <button type="button" data-city="surrey" aria-pressed="false"><b>素里</b><span>市长 7 位 · 议员 8 席 · 教委 6 席</span><i>选这里</i></button>
       <button type="button" data-city="richmond" aria-pressed="false"><b>列治文</b><span>市长 7 位 · 议员 8 席 · 教委 7 席</span><i>选这里</i></button>
     </div>
+    <p class="geo" id="geo">默认显示素里；如果能判断你在列治文，会自动切换。点上面的按钮可以随时修改。</p>
   </div>
   <div class="chips" id="chips" aria-label="按关心的事筛选" hidden>
     <span class="lab">我最在意</span>
@@ -310,10 +313,12 @@ details[open] > summary::before { content: "− "; }
   </table></div></div></details>
 </section>
 
-<footer class="foot">作者 Patrick Yang · 内容由 AI 辅助整理，请以原始来源为准 · 资料检查 2026-10-06<br>发现事实错误，请联系：<span class="mail">330259362@qq.com</span></footer>
+<footer class="foot">作者 Patrick Yang · 内容由 AI 辅助整理，请以原始来源为准 · 资料检查 2026-10-06<br>发现事实错误，请联系：<span class="mail">330259362@qq.com</span><br>为自动选择城市，页面会向 ipwho.is 查询你的大致位置（城市级），只用于选城市，页面不保存。</footer>
 </div>
 <script>(function () {
-  var state = { city: null, topic: 'all' };
+  var state = { city: 'surrey', topic: 'all' };
+  var chosen = false;
+  var geo = document.getElementById('geo');
   var names = { tax: '物业税', safety: '治安', housing: '住房' };
   var cityBtns = document.querySelectorAll('.cities button');
   var chipBtns = document.querySelectorAll('.chips button');
@@ -355,12 +360,38 @@ details[open] > summary::before { content: "− "; }
     b.addEventListener('click', function () {
       state.city = b.getAttribute('data-city');
       state.topic = 'all';
+      chosen = true;
+      try { localStorage.setItem('city', state.city); } catch (e) {}
+      if (geo) geo.textContent = '已按你的选择显示' + (state.city === 'richmond' ? '列治文' : '素里') + '。';
       render();
-      try { chips.scrollIntoView({ block: 'center' }); } catch (e) {}
     });
   });
   chipBtns.forEach(function (b) { b.addEventListener('click', function () { state.topic = b.getAttribute('data-topic'); render(); }); });
   render();
+
+  // Remembered choice wins; otherwise guess the city from the network location, falling back to Surrey.
+  var saved = null;
+  try { saved = localStorage.getItem('city'); } catch (e) {}
+  if (saved === 'surrey' || saved === 'richmond') {
+    state.city = saved; chosen = true; render();
+    if (geo) geo.textContent = '已按你上次的选择显示' + (saved === 'richmond' ? '列治文' : '素里') + '。点上面的按钮可以修改。';
+  } else if (window.fetch) {
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 3500);
+    fetch('https://ipwho.is/?fields=success,city,region_code,country_code', ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        clearTimeout(timer);
+        if (chosen || !d || !d.success || d.country_code !== 'CA' || d.region_code !== 'BC') return;
+        var c = String(d.city || '').toLowerCase();
+        var next = c === 'richmond' ? 'richmond' : (c === 'surrey' ? 'surrey' : null);
+        if (!next) return;
+        state.city = next;
+        render();
+        if (geo) geo.textContent = '已根据你的网络位置显示' + (next === 'richmond' ? '列治文' : '素里') + '，不对请点另一个。';
+      })
+      .catch(function () { clearTimeout(timer); });
+  }
 
   // "教委" links: with no city chosen, take the reader to the city picker instead of an empty section.
   var picker = document.getElementById('picker');

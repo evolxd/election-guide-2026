@@ -170,6 +170,7 @@ details[open] > summary::before { content: "− "; }
 
 .geo { margin-top: 10px; font-size: 13px; color: var(--muted); }
 </style>
+<script data-goatcounter="https://patrickyang.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head><body>
 
 <div class="shell">
@@ -313,9 +314,13 @@ details[open] > summary::before { content: "− "; }
   </table></div></div></details>
 </section>
 
-<footer class="foot">作者 Patrick Yang · 内容由 AI 辅助整理，请以原始来源为准 · 资料检查 2026-10-06<br>发现事实错误，请联系：<span class="mail">330259362@qq.com</span><br>为自动选择城市，页面会向 ipwho.is 查询你的大致位置（城市级），只用于选城市，页面不保存。</footer>
+<footer class="foot">作者 Patrick Yang · 内容由 AI 辅助整理，请以原始来源为准 · 资料检查 2026-10-06<br>发现事实错误，请联系：<span class="mail">330259362@qq.com</span><br>为自动选择城市，页面会向 ipwho.is 查询你的大致位置（城市级），只用于选城市，页面不保存。<br>本页使用 GoatCounter 做匿名访问统计（官方说明不使用 cookie、不识别个人身份）。</footer>
 </div>
 <script>(function () {
+  // Anonymous usage events (no-op when the analytics script is absent).
+  function track(name, title) {
+    try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: title || name, event: true }); } catch (e) {}
+  }
   var state = { city: 'surrey', topic: 'all' };
   var chosen = false;
   var geo = document.getElementById('geo');
@@ -361,12 +366,13 @@ details[open] > summary::before { content: "− "; }
       state.city = b.getAttribute('data-city');
       state.topic = 'all';
       chosen = true;
+      track('city-' + state.city, '选择城市：' + (state.city === 'richmond' ? '列治文' : '素里'));
       try { localStorage.setItem('city', state.city); } catch (e) {}
       if (geo) geo.textContent = '已按你的选择显示' + (state.city === 'richmond' ? '列治文' : '素里') + '。';
       render();
     });
   });
-  chipBtns.forEach(function (b) { b.addEventListener('click', function () { state.topic = b.getAttribute('data-topic'); render(); }); });
+  chipBtns.forEach(function (b) { b.addEventListener('click', function () { state.topic = b.getAttribute('data-topic'); track('topic-' + state.topic, '关心的事：' + b.textContent.trim()); render(); }); });
   render();
 
   // Remembered choice wins; otherwise guess the city from the network location, falling back to Surrey.
@@ -387,6 +393,7 @@ details[open] > summary::before { content: "− "; }
         var next = c === 'richmond' ? 'richmond' : (c === 'surrey' ? 'surrey' : null);
         if (!next) return;
         state.city = next;
+        track('geo-auto-' + next, '自动定位：' + (next === 'richmond' ? '列治文' : '素里'));
         render();
         if (geo) geo.textContent = '已根据你的网络位置显示' + (next === 'richmond' ? '列治文' : '素里') + '，不对请点另一个。';
       })
@@ -403,6 +410,17 @@ details[open] > summary::before { content: "− "; }
       picker.classList.add('nudge');
       setTimeout(function () { picker.classList.remove('nudge'); }, 1800);
     });
+  });
+
+  document.addEventListener('toggle', function (e) {
+    var d = e.target;
+    if (!d || d.tagName !== 'DETAILS' || !d.open) return;
+    var card = d.closest('.cand');
+    var nm = card ? card.querySelector('h3').textContent.trim() : d.querySelector('summary').textContent.trim();
+    track('details-' + nm.toLowerCase().replace(/[^a-z0-9一-龥]+/g, '-'), '展开细节：' + nm);
+  }, true);
+  document.querySelectorAll('.nav a').forEach(function (a) {
+    a.addEventListener('click', function () { track('nav-' + a.getAttribute('href').slice(1), '目录：' + a.textContent.trim()); });
   });
 
   var el = document.getElementById('count');

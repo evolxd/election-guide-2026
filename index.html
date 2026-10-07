@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><script>(function(){var p=null;try{p=localStorage.getItem("lang")}catch(e){}var zh=/^zh/i.test(navigator.language||"");var want=p||(zh?"zh":"en");if(want!=="zh"){location.replace('en/'+location.search+location.hash);}})();</script><link rel="alternate" hreflang="zh" href="https://evolxd.github.io/election-guide-2026/"><link rel="alternate" hreflang="en" href="https://evolxd.github.io/election-guide-2026/en/"><link rel="alternate" hreflang="x-default" href="https://evolxd.github.io/election-guide-2026/en/"><meta property="og:title" content="2026 大温市选决策指南"><meta property="og:description" content="素里与列治文 14 位市长候选人对照，含教委名单、投票资格与来源，不推荐投谁。"><meta property="og:type" content="website">
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><script>(function(){var p=null;try{p=localStorage.getItem("lang")}catch(e){}var zh=/^zh/i.test(navigator.language||"");var want=p||(zh?"zh":"en");if(want!=="zh"){location.replace('en/'+location.search+location.hash);}})();</script><link rel="alternate" hreflang="zh" href="https://evolxd.github.io/election-guide-2026/"><link rel="alternate" hreflang="en" href="https://evolxd.github.io/election-guide-2026/en/"><link rel="alternate" hreflang="x-default" href="https://evolxd.github.io/election-guide-2026/en/"><meta property="og:title" content="2026 大温市选决策指南"><meta property="og:description" content="素里与列治文 14 位市长候选人对照，含议员、教委名单、投票资格与来源，不推荐投谁。"><meta property="og:type" content="website">
 <title>2026 大温市选决策指南</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap">
 <style>
@@ -170,6 +170,11 @@ details[open] > summary::before { content: "− "; }
 
 .geo { margin-top: 10px; font-size: 13px; color: var(--muted); }
 
+.names { display: flex; flex-wrap: wrap; gap: 4px 6px; margin: 0; }
+.nm { font-size: 13px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 999px; padding: 1px 9px; line-height: 1.6; }
+.nm.inc::after { content: " ★"; color: var(--warn); }
+.legend { font-size: 12.5px; color: var(--muted); margin: 6px 0 10px; }
+
 .lang { display: inline-block; margin-top: 12px; font-size: 13px; color: var(--hero-ink); border: 1px solid var(--hero-muted); border-radius: 999px; padding: 3px 12px; text-decoration: none; }
 </style>
 <script data-goatcounter="https://patrickyang.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -198,7 +203,7 @@ details[open] > summary::before { content: "− "; }
 </section>
 
 <nav class="nav" aria-label="目录">
-  <a href="#cands">候选人</a><a href="#who">谁管什么</a><a href="#school">教委</a><a href="#vote">投票清单</a><a href="#more">备注与来源</a>
+  <a href="#cands">候选人</a><a href="#who">谁管什么</a><a href="#council">议员</a><a href="#school">教委</a><a href="#vote">投票清单</a><a href="#more">备注与来源</a>
 </nav>
 
 <section id="cands">
@@ -236,10 +241,26 @@ details[open] > summary::before { content: "− "; }
   <p class="small">市长在议会里只有一票，议员和教委同样重要。</p>
 </section>
 
+<section id="council">
+  <h2>市议员候选人</h2>
+  <p class="legend">按所属团队分组，只列名字，来源是市府官方名单。★ 表示该团队官网标注的现任议员。</p>
+  <p class="prompt cityprompt">请先在上面选择你投票的城市，这里会显示对应的议员候选人。</p>
+  <div class="trustee" data-city="surrey" hidden>
+    <h3 class="sub">素里 <small>66 位，选 8 位<sup class="cite">[42]</sup></small></h3>
+    <div class="teams"><section class="team"><h4>Surrey Connect · 8 位</h4><p class="names"><span class="nm inc">Harry Bains</span> <span class="nm">Michael Dunn</span> <span class="nm inc">Gord Hepner</span> <span class="nm inc">Pardeep Kooner</span> <span class="nm">Vera LeFranc</span> <span class="nm inc">Rob Stutt</span> <span class="nm">Rona Tepper</span> <span class="nm">Noemi Victorino</span></p></section><section class="team"><h4>Safe Surrey Coalition · 8 位</h4><p class="names"><span class="nm">Cheney Cloke</span> <span class="nm inc">Doug Elford</span> <span class="nm">Meera Gill</span> <span class="nm">Suhana Gill</span> <span class="nm">Laurie Guerra</span> <span class="nm inc">Mandeep Singh Nagra</span> <span class="nm">Allison Patton</span> <span class="nm">Beau Simpson</span></p></section><section class="team"><h4>Surrey First · 8 位</h4><p class="names"><span class="nm">Debra Antifaev</span> <span class="nm">Mike Bose</span> <span class="nm">Janet Brown</span> <span class="nm">Bilal Cheema</span> <span class="nm">Jasroop Gosal</span> <span class="nm">Gagan Nahal</span> <span class="nm">Clint Stewart</span> <span class="nm">Shina Vermani</span></p></section><section class="team"><h4>Surrey Now · 7 位</h4><p class="names"><span class="nm">Gail Beszedes</span> <span class="nm">Ollivor Dickson</span> <span class="nm">Rahul Gill</span> <span class="nm">Jesse Johl</span> <span class="nm">Enrique Ponce de Leon</span> <span class="nm">Werner Spangehl</span> <span class="nm">James Yu</span></p></section><section class="team"><h4>Conservative · 8 位</h4><p class="names"><span class="nm">Ricky Bajwa</span> <span class="nm">Dan B. Carlos</span> <span class="nm">Mehnaz Javed</span> <span class="nm">Cordel Pullar</span> <span class="nm">Manu Sharma</span> <span class="nm">Harkirat Sidhu</span> <span class="nm">Calvin Vanderploeg</span> <span class="nm">Donna Wu</span></p></section><section class="team"><h4>Imagine Surrey · 8 位</h4><p class="names"><span class="nm">Yousef Aldabainah-Barakat</span> <span class="nm">Chandan Chahal</span> <span class="nm">Perminder Chohan</span> <span class="nm">Narima Dela Cruz</span> <span class="nm">Ashiyana Hanif</span> <span class="nm">William Li</span> <span class="nm">Margaret Mubanda</span> <span class="nm">Kevin Wilkie</span></p></section><section class="team"><h4>New Surrey+ · 8 位</h4><p class="names"><span class="nm">Leanna Chatwin</span> <span class="nm">Ian de Hoog</span> <span class="nm">Messia Ditshimba</span> <span class="nm">Christopher R. Hoffmann</span> <span class="nm">Emily Kennedy</span> <span class="nm">Matthew J. Smed</span> <span class="nm">Lily Tsi</span> <span class="nm">Grace Zeigler</span></p></section><section class="team"><h4>无团队 · 11 位</h4><p class="names"><span class="nm">Intikhab Ahmed</span> <span class="nm">Lisa Dawn Alexis</span> <span class="nm">Philip Carless</span> <span class="nm">Isaac Daniel</span> <span class="nm">Youssef Khattab</span> <span class="nm">Jimmy Rico</span> <span class="nm">Tom Said</span> <span class="nm">Miguel Ting</span> <span class="nm">Vik Uppal</span> <span class="nm">Mila Wong-Kabush</span> <span class="nm">Salman Zafar</span></p></section></div>
+    <p class="small">Surrey Now 的竞选海报上还有 Brad Kielmann，但他不在市府官方名单里。现任标记来自 Surrey Connect 和 Safe Surrey 的官网<sup class="cite">[15][43]</sup>，其他团队我没有核对。</p>
+  </div>
+  <div class="trustee" data-city="richmond" hidden>
+    <h3 class="sub">列治文 <small>55 位，选 8 位<sup class="cite">[25]</sup></small></h3>
+    <div class="teams"><section class="team"><h4>Advance Richmond · 7 位</h4><p class="names"><span class="nm">Kevin Lai</span> <span class="nm">Gary Law</span> <span class="nm">Wallace Pong</span> <span class="nm">Sheldon Starrett</span> <span class="nm">Grace Tsang</span> <span class="nm">Jizhou William Wang</span> <span class="nm">Sam Wang</span></p></section><section class="team"><h4>Richmond Forward · 5 位</h4><p class="names"><span class="nm">Romeo Bicego</span> <span class="nm">Howard Jampolsky</span> <span class="nm">Shelley Leonhardt</span> <span class="nm">Eric Yung</span> <span class="nm">Melissa Zhang</span></p></section><section class="team"><h4>We Are Richmond · 5 位</h4><p class="names"><span class="nm">Jack Chen</span> <span class="nm">Michael Lok</span> <span class="nm">Jenny Gonzales Mata</span> <span class="nm">Antonio "Tony" Ortega</span> <span class="nm">Adnan Sarwar</span></p></section><section class="team"><h4>Conservative · 5 位</h4><p class="names"><span class="nm">Dale Bains</span> <span class="nm">Oday Brahem</span> <span class="nm">Adam Dobrer</span> <span class="nm">Lisa Phillips</span> <span class="nm">Alex Sagert</span></p></section><section class="team"><h4>Richmond Citizens (RCA) · 5 位</h4><p class="names"><span class="nm">Alton Cheung</span> <span class="nm">Vincent Li</span> <span class="nm">Keefer Pelech</span> <span class="nm">Tamás Revóczi</span> <span class="nm">Milly Yee</span></p></section><section class="team"><h4>RITE Richmond · 4 位</h4><p class="names"><span class="nm">Carol Day</span> <span class="nm">Jerome Dickey</span> <span class="nm">Laura Gillanders</span> <span class="nm">Michael Wolfe</span></p></section><section class="team"><h4>Richmond Strong · 3 位</h4><p class="names"><span class="nm">Bob Basanti</span> <span class="nm">Jeff Jiang</span> <span class="nm">Karen Novorr-Pezzuto</span></p></section><section class="team"><h4>Common Sense · 3 位</h4><p class="names"><span class="nm">Kenny Chiu</span> <span class="nm">Thomas Leung</span> <span class="nm">Glenda Strang</span></p></section><section class="team"><h4>Richmond United · 2 位</h4><p class="names"><span class="nm">Mike Gill</span> <span class="nm">Andy Hobbs</span></p></section><section class="team"><h4>Action Richmond · 1 位</h4><p class="names"><span class="nm">Edward He</span></p></section><section class="team"><h4>ONE Richmond · 1 位</h4><p class="names"><span class="nm">Kevin Lainchbury</span></p></section><section class="team"><h4>无团队 · 14 位</h4><p class="names"><span class="nm">Adil Awan</span> <span class="nm">Mario Cruz</span> <span class="nm">Jessy Dhillon</span> <span class="nm">Tim Fan</span> <span class="nm">Donald Flintoff</span> <span class="nm">Louis Huang</span> <span class="nm">Milan Kljajic</span> <span class="nm">Alan Lackstein</span> <span class="nm">Pak Hing (Ben) Lee</span> <span class="nm">Andrew Mrozowski</span> <span class="nm">Dennis Page</span> <span class="nm">Hong Yan Melody Pan</span> <span class="nm">Daniel Tsang</span> <span class="nm">Andy Z. Wang</span></p></section></div>
+    <p class="small">团队归属以市府 9 月 11 日官方声明为准；个别候选人（如 Mario Cruz）在官方名单中没有标团队，这里按「无团队」列出。</p>
+  </div>
+</section>
+
 <section id="school">
   <h2>教委候选人</h2>
   <p class="small">以下要点均为候选人自述，没有独立核实。</p>
-  <p class="prompt" id="prompt2">请先在上面选择你投票的城市，这里会显示对应的教委候选人。</p>
+  <p class="prompt cityprompt" id="prompt2">请先在上面选择你投票的城市，这里会显示对应的教委候选人。</p>
   <div class="trustee" data-city="surrey" hidden>
     <h3 class="sub">素里 <small>24 位，选 6 位<sup class="cite">[21][41]</sup></small></h3>
     <div class="teams"><section class="team"><h4>Surrey First Education · （6 位，全是现任）</h4><ul><li><b>Terry Allen</b><span>任教委 24 年，预算委员会主席</span></li><li><b>Bob Holmes</b><span>2014 年起，BC 教委协会副主席</span></li><li><b>Laurie Larsen</b><span>18 年，曾在市府工作 27 年</span></li><li><b>Garry Thind</b><span>12 年以上</span></li><li><b>Gary Tymoschuk</b><span>12 年，现任教委主席，曾两届市议员</span></li><li><b>Shawn Wilson</b><span>27 年</span></li></ul></section><section class="team"><h4>Surrey Now · （6 位）</h4><ul><li><b>Vanessa Gilera</b><span>呼吸治疗师；校舍跟上增长、特殊需求</span></li><li><b>Michelle Ceniza</b><span>家庭医生</span></li><li><b>Rohit D'Silva</b><span>工程与 MBA，企业背景</span></li><li><b>Venson Wang</b><span>财富管理、创业者</span></li><li><b>John Banovich、Vincent Tighe</b><span>官方简介为空</span></li></ul></section><section class="team"><h4>Our Surrey · （4 位）</h4><ul><li><b>Dean McGee</b><span>前 Surrey DPAC 主席，家长团体</span></li><li><b>Anne Whitmore</b><span>Surrey DPAC 主席，休假中</span></li><li><b>Kyle Jones</b><span>教育助理、CUPE 工会干部</span></li><li><b>Vick Karan</b><span>CUPE 718 财务，市府工作</span></li></ul></section><section class="team"><h4>无团队 · （8 位）</h4><ul><li><b>Harjit Bhullar</b><span>地产经纪；校园安全、禁烟毒</span></li><li><b>Amrit Birring</b><span>单一议题：反对 SOGI 123、提高学术标准</span></li><li><b>Gurleen Chahal</b><span>护理学生；要永久校舍</span></li><li><b>Noor Cheema</b><span>在校区工作 4 年；校舍容量</span></li><li><b>Meena Kochher</b><span>BC 儿童医院 20 年</span></li><li><b>Ghulam Mujtaba</b><span>环境工程师</span></li><li><b>Afzalur Rahman</b><span>教授，教学 16 年</span></li><li><b>Gary B. Hee</b><span>官方简介为空</span></li></ul></section></div>
@@ -269,7 +290,7 @@ details[open] > summary::before { content: "− "; }
 <li>Locke 的「15 亿」「3.5 亿公安园区」造价；McCallum 的「取消闭门会议」；Van Vliet 的董事职务。</li>
 <li>教委候选人的履历核实（上表只是自述）；竞选期间第三方广告规则（Elections BC），发布或付费推广前需核对。</li>
 </ul></div></details>
-  <details><summary>来源链接（41 条）</summary><div class="det"><div class="tw"><table class="ref-table">
+  <details><summary>来源链接（43 条）</summary><div class="det"><div class="tw"><table class="ref-table">
     <thead><tr><th style="width:6%">#</th><th style="width:7%">等级</th><th style="width:25%">来源</th><th>网址</th></tr></thead>
     <tbody>
       <tr><td class="ref-id">[1]</td><td>媒体</td><td>CTV News：法院维持省府对素里警务过渡的决定（2024-05）</td><td>https://bc.ctvnews.ca/b-c-government-decision-on-surrey-police-transition-upheld-in-court-minister-says-1.6898329</td></tr>
@@ -313,7 +334,7 @@ details[open] > summary::before { content: "− "; }
       <tr><td class="ref-id">[39]</td><td>官方</td><td>BC 政府：2026 年地方选举投票日 FAQ（资格与证件）</td><td>https://www2.gov.bc.ca/gov/content/governments/local-governments/governance-powers/general-local-elections/election-2026-faq-voting-day</td></tr>
       <tr><td class="ref-id">[40]</td><td>第三方</td><td>SD68 整理：《学校法》中部长与教委的权限（第 168 条、第 85 条）</td><td>https://www.sd68.bc.ca/wp-content/uploads/GC-Authority-of-School-Board-and-the-Minister.pdf</td></tr>
       <tr><td class="ref-id">[41]</td><td>官方·自述</td><td>City of Surrey：教委候选人名单与个人简介（24 位）</td><td>https://www.surrey.ca/2026-municipal-election/candidates/candidates-office-of-school-trustee</td></tr>
-    </tbody>
+    <tr><td class="ref-id">[42]</td><td>官方·自述</td><td>City of Surrey：市议员候选人名单与个人简介（66 位）</td><td>https://www.surrey.ca/2026-municipal-election/candidates/candidates-office-of-councillor</td></tr><tr><td class="ref-id">[43]</td><td>自述</td><td>Safe Surrey Coalition 竞选网站（现任议员标记）</td><td>https://safesurreycoalition.ca</td></tr></tbody>
   </table></div></div></details>
 </section>
 
@@ -355,8 +376,7 @@ details[open] > summary::before { content: "− "; }
     document.getElementById('grid-surrey').hidden = state.city !== 'surrey';
     document.getElementById('grid-richmond').hidden = state.city !== 'richmond';
     document.querySelectorAll('.trustee').forEach(function (e) { e.hidden = e.getAttribute('data-city') !== state.city; });
-    var p2 = document.getElementById('prompt2');
-    if (p2) p2.hidden = !!state.city;
+    document.querySelectorAll('.cityprompt').forEach(function (p) { p.hidden = !!state.city; });
     chips.hidden = !state.city;
     prompt.hidden = !!state.city;
     document.getElementById('empty').hidden = !(state.city && shown === 0);
